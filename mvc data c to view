@@ -1,0 +1,42 @@
+//Mvc Transfer data from COntroller to View
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace WebApplication6.Controllers
+{
+    public class DefaultController : Controller
+    {
+        // GET: Default
+        public ActionResult Index()
+        {
+            ViewData["Key"] = "Kiran Kumar";
+            ViewBag.CompanyName = "Ojas Innovative Technology Pvt.Ltd";
+            TempData["location"] = "Gachibowli";
+            return View();
+        }
+    }
+}
+
+//cshtml
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+My Name is:@ViewData["Key"]
+<br/>
+<br/>
+Company Name:@ViewBag.CompanyName
+<br/>
+<br/>
+Location is:@TempData["location"]
+
+
+
